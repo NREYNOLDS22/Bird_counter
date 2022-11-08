@@ -5,7 +5,7 @@ function getBirdHtml(){
     birdData.forEach(function(bird){
         birdHtml += `
                 <div>
-                    <img src="${bird.image}" class="">
+                    <img src= ${bird.image} class="">
                 </div>
                 <div>
                     <h3 class="species-text">${bird.species}</h3>
