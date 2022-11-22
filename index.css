@@ -2,3 +2,15 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+.bird-pic {
+    width: 50px;
+}
+
+.main-panel {
+    display: flex;
+}
+
+.collapsed {
+    display: none;
+}
