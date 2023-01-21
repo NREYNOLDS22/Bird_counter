@@ -5,15 +5,15 @@ document.addEventListener('click', function(e){
         handlePlusClick(e.target.dataset.plus)
     } else if (e.target.dataset.minus){
         handleMinusClick(e.target.dataset.minus)
-    } else if (e.target.dataset.moreInfo){
-        handleMoreInfoClick(e.target.dataset.moreInfo)
-    }
+    } else if (e.target.dataset.moreinfo){
+        handleMoreInfoClick(e.target.dataset.moreinfo)
+    } 
 })
 
 function handlePlusClick(birdId){
     const targetBirdObj = birdData.filter(function(bird){
         return bird.uuid === birdId
-    }) [0]
+    }) [0] 
     targetBirdObj.count++
     render()
 }
@@ -22,37 +22,36 @@ function handleMinusClick(birdId){
     const targetBirdObj = birdData.filter(function(bird){
         return bird.uuid === birdId
     }) [0]
-    targetBirdObj.count--
+    if(targetBirdObj.count > 0){
+        targetBirdObj.count--
+    }
     render()
 }
 
 function handleMoreInfoClick(infoId){
-    // const targetBirdObj = birdData.filter(function(bird){
-    //     return bird.uuid === birdId
-    // }) [0]
     document.getElementById(`info-text-${infoId}`).classList.toggle('collapsed')
-    // console.log('test')
 }
+
 
 function getBirdHtml(){
     let  birdHtml = ""
     birdData.forEach(function(bird){
         birdHtml += `
-                <div class="main-panel">
+                <div class="panel">
                     <div>
-                        <img src= ${bird.image} class="bird-pic">
+                        <img src= ${bird.image} class="bird-pic pointer">
                     </div>
-                    <div>
+                    <div class="mid-section">
                         <h3 class="species-text">${bird.species}</h3>
-                        <button data-moreInfo="${bird.uuid}">More Info</button>
+                        <button class="info-btn" data-moreinfo="${bird.uuid}">More Info</button>
                     </div>
-                    <div>
-                        <button data-plus="${bird.uuid}">+</button>
-                        <p id="sightings-num" >${bird.count}</p>
-                        <button data-minus="${bird.uuid}">-</button>
+                    <div class="counter-section">
+                        <i class="fa-solid fa-square-plus" data-plus="${bird.uuid}"></i>
+                        <p id="sightings-num" class="bird-num">${bird.count}</p>
+                        <i class="fa-solid fa-square-minus" data-minus="${bird.uuid}"></i>
                     </div>
                 </div>
-                <div id="info-text-${bird.uuid}" class="collapsed" >
+                <div id="info-text-${bird.uuid}" class="collapsed info-text">
                     <p class="size-shape">Size and Shape: ${bird.sizeShape}</p>
                     <p class="color-pattern">Color and Pattern: ${bird.colorPattern}</p>
                 </div>
@@ -61,8 +60,38 @@ function getBirdHtml(){
     return birdHtml
 }
 
+
+function getTotalHtml(){
+    let totalHtml = ""
+    birdData.forEach(function(bird){
+        totalHtml += `
+            <div class="total-line">
+                <p class="total-species">${bird.species}</p>
+                <p class="total-count">${bird.count}</p>
+            </div>
+        `
+    })
+    return totalHtml
+}
+
+
 function render(){
     document.getElementById("bird-html").innerHTML = getBirdHtml()
+    document.getElementById("total-html").innerHTML = getTotalHtml()
 }
 
 render()
+
+const modal = document.getElementById('modal')
+const shareBtn = document.getElementById('share-btn')
+const submitBtn = document.getElementById('submit-btn')
+const closeBtn = document.getElementById('close-btn')
+
+shareBtn.addEventListener('click', function(){
+    modal.style.display = "block" 
+    
+})
+
+closeBtn.addEventListener('click', function(){
+    modal.style.display = "none"
+})

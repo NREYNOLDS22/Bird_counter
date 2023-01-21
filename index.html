@@ -1,23 +1,42 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <!-- CSS -->
         <link rel="stylesheet" href="index.css">
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        
     </head>
 
     <body>
         <header>
-            <h1>Dynamic Birding</h1>
-        </header>
+            <h1><span class="reg-weight">dynamic</span>BIRDING</h1>
+        </header
 
         <main>
             <div id="bird-html">
                 <!-- Bird "Feed" lol -->
             </div>
-            
-            <!-- <button id="total-btn">Today's total</button>
-            <p id="total-num"></p>
-            <button id="copy-btn">Copy to Share Your Totals for the Day!</button>
-            <button id="reset-btn">Reset</button> -->
+            <div id="total-html">
+                <!-- Total HTML -->
+            </div>
+            <div>
+                <button id="share-btn">Share Your Totals!</button>
+            </div>
+            <div id="modal" class="modal">
+                <form id="modal-content">
+                    <!-- <span id="close-btn" class="close-btn">X</span> -->
+                    <input type="text" id="name" name="name" placeholder="Enter Your Name (Optional)" aria-label="Name optional">
+                    <input type="text" id="neighborhood" name="neighborhood" placeholder="Enter Your Neighborhood" aria-label="Enter Your Neighborhood" required>
+                    <input type="submit" value="Submit" id="submit-btn" class="submit-btn">
+                    <button class="close-btn" id="close-btn">Nevermind!</button>
+                </form>
+            </div>
         </main>
         
         <script src="index.js" type="module"></script>

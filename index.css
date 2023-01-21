@@ -1,16 +1,153 @@
 html, body {
-    margin: 0;
+    margin: 20px auto;
     padding: 0;
+    width: 400px;
+    font-family: 'Sen', sans-serif;
 }
+
+/* header {
+    padding: 0;
+    margin: 0;
+    
+} */    
+
+h1 {
+    margin: 0;
+    padding: 1rem .5rem;
+    color: whitesmoke;
+    background-color: #3d405b
+}
+
+
+
+
+/* typography */
+
+.species-text {
+    margin: 0;
+}
+
+.counter-section {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.panel {
+    border-bottom: #1F7A8C 2px solid;
+}
+
+p {
+    margin: 0;
+}
+
+.reg-weight {
+    font-weight: 400;
+}
+
+
+
+
 
 .bird-pic {
-    width: 50px;
+    width: 100px;
+    border-radius: 2px;
 }
 
-.main-panel {
+.panel {
     display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    padding: 1rem 1rem 1rem 0;
+    background-color: whitesmoke;
+    
+}
+
+.mid-section {
+    margin-left: 1rem;
 }
 
 .collapsed {
     display: none;
+}
+
+.info-text {
+    border-bottom: #1F7A8C 2px solid;
+    padding: 1rem;
+    background-color: #E1E5F2;
+}
+
+button {
+    cursor: pointer;
+    color: whitesmoke;
+    background-color: #e07a5f;
+    border: none;
+    border-radius: 3px;
+}
+
+.info-btn {
+    border-radius: 3px;
+    width: 6rem;
+    /* padding: .25rem .5rem; */
+    font-size: 1rem;
+    margin-top: .5rem;
+}
+
+i {
+    font-size: 20px;
+    margin: .5rem;
+}
+
+.bird-num {
+    background-color: white;
+    border: 2px gray solid;
+    border-radius: 2px;
+    padding: .35rem .5rem;
+}
+
+.total-line {
+    display: flex;
+    /* align-content: space-between; */
+    font-size: 1.25rem;
+    padding: .25rem;
+}
+
+.total-species, 
+.total-count {
+    display: block;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 280px;
+    height: 150px;
+    padding: 1rem;
+    border-radius: 2px;
+    background-color: #f2cc8f;
+    box-shadow: 11px 10px 359px 61px rgba(0,0,0,0.75);
+}
+
+input,
+.close-btn {
+    margin: .5rem 0;
+    padding: .25rem;
+    border: none;
+    border-radius: 2px;
+    width: 100%;
+}
+
+.submit-btn {
+    display: block;
+}
+
+.close-btn {
+    display: block;
+    cursor: pointer;
 }
